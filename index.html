@@ -7,6 +7,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
 	</head>
 	<body class="is-preload">
 
@@ -22,24 +26,44 @@
 						</header>
 						
 						<hr />
-						<h2>Inserte la formula</h2>
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field">
-									<input type="text" name="name" id="name" placeholder="Formula despues de la f(x)" /> 
-								</div>
-								<div class="field">
-									<input type="text" name="name" id="name" placeholder="A" /> 
-								</div>
-								<div class="field">
-									<input type="text" name="name" id="name" placeholder="B" /> 
-								</div>
-							</div>
+						<h5>Inserte la formula</h5>
+						<form id="biseccion">
+								<div class="fields">
+										<div class="field">
+											<input type="text" name="name" id="formula" placeholder="f(x)" /> 
+										</div>
+									
+									</div>
+
 							
+							<div class="container">
+								<div class="row">
+								  <div class="col-xs-12 col-md-3">
+										
+									<div class="form-group">
+									  <div class="input-group">
+										<input type="text" name="name" id="a" placeholder="A" required class="form-control">
+										<span class="input-group-addon">-</span>
+										<input type="text" name="name" id="b" placeholder="B"required class="form-control">
+									  </div>
+									</div>
+									<div class="form-group">
+										<div class="input-group">
+											<input type="text" name="name" id="a" placeholder="error" required class="form-control">
+											<span class="input-group-addon">-</span>
+											<input type="text" name="name" id="b" placeholder="iteraccion"required class="form-control">
+										</div>
+									</div>
+								  </div>
+								</div>
+							  </div>
+					
 							<ul class="actions special">
-								<li><a href="#" class="button">Solución</a></li>
+								<li><input type="button" onclick="biseccion()" value="Solución" class="button"></li>
 							</ul>
-							
+							<div class="field">
+								<div id="mostrar" ></div>
+							</div>
 						</form>
 						
 					
@@ -54,7 +78,8 @@
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
 
+				
 			</script>
-
+			<script src="biseccion.js"> </script>
 	</body>
 </html>
