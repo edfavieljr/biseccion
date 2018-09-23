@@ -1,8 +1,11 @@
 {
-    "name": "biseccion",
-    "version": "0.1.0",
-    "main": "main.js",
-    "scripts": {
-      "start": "electron ."
-    }
+  "name": "biseccion",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "mathjs": "^5.1.2"
   }
+}
