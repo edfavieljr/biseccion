@@ -1,38 +1,37 @@
-const math = require('mathjs');
+function biseccion(){
+	var a = document.getElementById("a").value;
+	var b = document.getElementById("b").value;
+	var funcion = document.getElementById("funcionBiseccion").value;
+	var i = document.getElementById("numeroIteracion").value
+	var cont = 0;
+	while(cont!=i){
+		const evaluacion1 = math.parser();
+		evaluacion1.eval("f(x) = "+funcion);
+		var res1 = evaluacion1.eval("f("+a+")");
 
-function biseccion (){
-    var  form = document.forms["biseccion"].elements[0].value;
-    var  formula =document.getElementById("formula").value;
-    var a = document.getElementById("a").value;
-    var b = document.getElementById("b").value;
+		console.log(res1);
 
-    
-    var separar  = formula.split("+");
-    if(separar.length<2){
-        alert('inserte por lo menos una suma o resta');
-    }
-    else{
-        var reemplazoA = {};
-        for(i=0;i<separar.length;i++){
-            reemplazoA[i] = separar[i].replace("x", a);
-            
-        }
-        var reemplazoB = {};
-        for(i=0;i<separar.length;i++){
-            reemplazoB[i] = separar[i].replace("x", b);
-            
-        }
+		const evaluacion2 = math.parser();
+		evaluacion2.eval("f(x) = "+funcion);
+		var res2 = evaluacion2.eval("f("+b+")");
 
-        
-        console.log(separar);
-        console.log(reemplazoA)
-        console.log(reemplazoB);
-        document.getElementById("mostrar").innerHTML='<textarea name="mostrar" rows="5" cols="30">Por formula: '+formula+' \
-            <br>Por separar: '+separar+' \
-            <br>Por a: '+a+' \
-            <br>Por b: '+b ;
-        
-    }
-    
+		console.log(res2);
 
-    }
+		var mult = res1*res2;
+		if (mult < 0) {
+			var media = (parseFloat(a)+parseFloat(b))/2;
+			console.log(media);
+			if (media > b) {
+				b = media;
+			}else{
+				a = media;
+			}
+			console.log("Valor último de a: "+a);
+			console.log("Valor último de b: "+b);
+		}else{
+			console.log("No es viable para bisección");
+			break;
+		}
+		cont++;
+	}
+}

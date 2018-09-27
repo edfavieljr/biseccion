@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Bisección - Eduardo Faviel</title>
+		<script src="math.js" type="text/javascript"></script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -51,7 +52,7 @@
 										<div class="input-group">
 											<input type="text" name="name"  placeholder="error" required class="form-control">
 											<span class="input-group-addon">-</span>
-											<input type="text" name="name"  placeholder="iteraccion"required class="form-control">
+											<input type="text" name="name" id="iteraccion" placeholder="iteraccion"required class="form-control">
 										</div>
 									</div>
 								  </div>
@@ -77,9 +78,7 @@
 					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
 					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
 				}
-
-				
 			</script>
-			<script src="biseccion.js"> </script>
+			<script src="biseccion.js" type="text/javascript"> </script>
 	</body>
 </html>
