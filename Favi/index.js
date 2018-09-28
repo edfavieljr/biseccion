@@ -57,35 +57,46 @@ function biseccion(){
 	var b = document.getElementById("b").value;
 	var funcion = document.getElementById("funcionBiseccion").value;
 	var i = document.getElementById("numeroIteracion").value
-	var cont = 0;
+    var cont = 0;
+    
 	while(cont!=i){
+        var xr = ((parseFloat(a)+parseFloat(b))/2);
+		var xr2;
 		const evaluacion1 = math.parser();
 		evaluacion1.eval("f(x) = "+funcion);
-		var res1 = evaluacion1.eval("f("+a+")");
+		var xi = evaluacion1.eval("f("+a+")");
 
-		console.log(res1);
-
+		xr2 = xr;
 		const evaluacion2 = math.parser();
 		evaluacion2.eval("f(x) = "+funcion);
-		var res2 = evaluacion2.eval("f("+b+")");
+		var xu = evaluacion2.eval("f("+xr+")");
 
-		console.log(res2);
-
-		var mult = res1*res2;
+        var mult = xi*xu;
+		var xranterior;
+		
 		if (mult < 0) {
-			var media = (parseFloat(a)+parseFloat(b))/2;
-			console.log(media);
-			if (media > b) {
-				b = media;
-			}else{
-				a = media;
+			
+			b= xr;
+			console.log("resultado B: " + b);
+			if(cont > 1){
+				console.log("XR b: " + xr2);
+				console.log("XANTERIOR b : "+ xranterior);
+				//var error = ((xr2 - xranterior)/xr)*100; 
+				// console.log("error B: " + error);
 			}
-			console.log("Valor último de a: "+a);
-			console.log("Valor último de b: "+b);
+
 		}else{
-			console.log("No es viable para bisección");
-			break;
+			a = xr;
+			console.log("resultado A: " + a);
+			if(cont > 1){
+				console.log("XR a: " + xr2);
+				console.log("XANTERIOR a : "+ xranterior);
+				//var error = ((xr2 - xranterior)/xr)*100; 
+				// console.log("error A: " + error);
+
+			}
 		}
+		xranterior = xr;
 		cont++;
 	}
 }

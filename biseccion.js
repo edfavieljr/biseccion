@@ -3,8 +3,11 @@ function biseccion(){
 	var b = document.getElementById("b").value;
 	var funcion = document.getElementById("funcionBiseccion").value;
 	var i = document.getElementById("numeroIteracion").value
-	var cont = 0;
+    var cont = 0;
+    
 	while(cont!=i){
+        var media = (parseFloat(a)+parseFloat(b))/2;
+
 		const evaluacion1 = math.parser();
 		evaluacion1.eval("f(x) = "+funcion);
 		var res1 = evaluacion1.eval("f("+a+")");
@@ -17,9 +20,11 @@ function biseccion(){
 
 		console.log(res2);
 
-		var mult = res1*res2;
+        var mult = res1*res2;
+        
+        console.log(mult);
 		if (mult < 0) {
-			var media = (parseFloat(a)+parseFloat(b))/2;
+			
 			console.log(media);
 			if (media > b) {
 				b = media;
