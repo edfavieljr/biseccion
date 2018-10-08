@@ -40,6 +40,7 @@ function puntofijo(){
 				const parser2 = math.parser();
 				parser2.eval("f(x) = "+funcionDerivada);
 				res2 = parser2.eval("f("+x0+")");
+				console.log("El resultado es: "+res2);
 				if (x0==aux) {
 					console.log("El resultado es: "+res2);
 					break;
@@ -56,7 +57,7 @@ function biseccion(){
 	var a = document.getElementById("a").value;
 	var b = document.getElementById("b").value;
 	var funcion = document.getElementById("funcionBiseccion").value;
-	var i = document.getElementById("numeroIteracion").value
+	var i = document.getElementById("numeroIteracion").valuex
     var cont = 0;
     
 	while(cont!=i){
@@ -79,8 +80,8 @@ function biseccion(){
 			b= xr;
 			console.log("resultado B: " + b);
 			if(cont > 1){
-				console.log("XR b: " + xr2);
-				console.log("XANTERIOR b : "+ xranterior);
+				// console.log("XR b: " + xr2);
+				// console.log("XANTERIOR b : "+ xranterior);
 				//var error = ((xr2 - xranterior)/xr)*100; 
 				// console.log("error B: " + error);
 			}
@@ -89,8 +90,8 @@ function biseccion(){
 			a = xr;
 			console.log("resultado A: " + a);
 			if(cont > 1){
-				console.log("XR a: " + xr2);
-				console.log("XANTERIOR a : "+ xranterior);
+				// console.log("XR a: " + xr2);
+				// console.log("XANTERIOR a : "+ xranterior);
 				//var error = ((xr2 - xranterior)/xr)*100; 
 				// console.log("error A: " + error);
 
