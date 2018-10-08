@@ -3,19 +3,25 @@ function newtonraphson(){
 	var nr = 0;
 	var x0 = document.getElementById("x0").value;
 	var funcion = document.getElementById("funcion").value;
-	var funcionDerivada = math.derivative(funcion, 'x').toString()
+	var funcionDerivada = math.derivative(funcion, 'x').toString();
+	var xanterior;
 
-	
-	const parser1 = math.parser();
-	parser1.eval("f(x) = "+funcion);
-	var res1 = parser1.eval("f("+x0+")");
+	do{
 
-	const parser2 = math.parser();
-	parser2.eval("f(x) = "+funcionDerivada);
-	var res2 = parser2.eval("f("+x0+")");
+		const parser1 = math.parser();
+		parser1.eval("f(x) = "+funcion);
+		var res1 = parser1.eval("f("+x0+")");
 
-	nr = x0 - (res1/res2);
-	console.log("El resultado es: "+nr);
+		const parser2 = math.parser();
+		parser2.eval("f(x) = "+funcionDerivada);
+		var res2 = parser2.eval("f("+x0+")");
+
+		nr = x0 - ((res1)/(res2));
+		xanterior= x0;
+		x0 =nr;
+		i++;
+	}while(x0 != xanterior)
+	console.log("El resultado es: "+nr+"\nEn la iterraccion: " + i);
 }
 
 function puntofijo(){
