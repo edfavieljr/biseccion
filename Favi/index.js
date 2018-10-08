@@ -37,19 +37,6 @@ function puntofijo(){
 
 	if(res2<1){
 
-<<<<<<< HEAD
-				const parser2 = math.parser();
-				parser2.eval("f(x) = "+funcionDerivada);
-				res2 = parser2.eval("f("+x0+")");
-				console.log("El resultado es: "+res2);
-				if (x0==aux) {
-					console.log("El resultado es: "+res2);
-					break;
-				}
-			}
-			
-		}
-=======
 		do{
 			const parser1 = math.parser();
 			parser1.eval("f(x) = "+funcion);
@@ -62,7 +49,6 @@ function puntofijo(){
 
 		console.log("El resultado es: "+res2+"\nEn la iterraccion: " + i);
 		
->>>>>>> dbb0b420fa84cdcc284b1b36a45d16085687e5de
 	}else{
 		alert("No es viable para punto fijo.");
 	}
